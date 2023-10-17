@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(ellipse at center, #ff5722, #ff9800); /* Color gradient background */
+            font-family: 'Arial', sans-serif; /* Font style remains Arial */
+            text-align: center; /* Center content */
+        }
+
+        h2.weatherText {
+            color: white; /* Text color */
+            font-size: 45px; /* Increase font size */
+            margin-top: 20%; /* Center vertically by adjusting the margin */
+        }
+
+        form.weatherText {
+            margin-top: 20px;
+        }
+
+        input.weatherText {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="weatherText">Weather Dashboard in Flask</h2>
+    <form class="weatherText" id="weatherForm" action="{{ url_for('render_results') }}" method="post">
+        Name of the city: <input class="weatherText" id="weatherInput" type="text" name="city"><br>
+        <input class="weatherText" id="weatherSubmit" type="submit" value="Submit">
+    </form>
+</body>
+</html>

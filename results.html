@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/results.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> <!-- Change the font style to Courgette -->
+    <style>
+        body {
+            background: radial-gradient(ellipse at center, #ff5733, #ffcc00); /* New radial gradient background */
+            font-family: 'Arial', sans-serif; /* Font style remains Arial */
+            text-align: center; /* Center content */
+        }
+
+        #weatherResults {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20% auto; /* Center content vertically */
+            width: 60%;
+            animation: fadeIn 1.5s; /* Add a fadeIn animation */
+        }
+
+        h3, h4 {
+            color: #333; /* Text color */
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        /* Define fadeIn animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="weatherResults">
+    <h3>Weather in {{ location }}</h3>
+    <h2>{{ temp }}° F</h2>
+    <h3>{{ weather }}</h3>
+    <h4>Feels like: {{ feels_like }}° F</h4>
+</div>
+</body>
+</html>
